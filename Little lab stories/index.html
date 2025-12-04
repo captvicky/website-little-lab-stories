@@ -1,270 +1,269 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en-ID"><head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <meta name="keywords" content="NFT BOOK, Digital Book, Kids Book">
-    <meta name="description" content="Creative sanctuary designed to nurture children’s imagination in a fast-paced, digital world. Through nature-inspired mixed media art, storytelling, and hands-on exploration, TIAS helps children express themselves, connect with their environment, and experience creativity as a joyful journey—not just the act of making art.">
-    <title>Little Lab Stories</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="index.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <meta name="generator" content="Nicepage 7.8.23, nicepage.com">
-    <meta property="og:title" content="Little Lab Stories">
-    <meta property="og:description" content="deep passion for mindful, nature-based creativity, Rangga creates gentle spaces where children can slow down, imagine, and explore through the beauty of natural patterns, textures, and expressive drawing methods such as his FloLines EmoGraph approach.">
-    <meta property="og:image" content="https://littlelabstories.com/images/TIASlogonew.png">
-    <meta property="og:url" content="https://littlelabstories.com">
-    <link rel="icon" href="images/TIASlogonew.png">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Little Lab Stories - Coming Soon</title>
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
-    <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "Little lab Stories"
-}</script>
-    <meta name="theme-color" content="#478ac9">
-    <meta property="og:type" content="website">
-  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
-  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"> 
-    <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-valign-top-lg u-valign-top-md u-section-1" src="" id="carousel_3dba">
-      <div class="u-container-align-center u-container-style u-expanded-width u-group u-image u-shading u-image-1" data-image-width="2546" data-image-height="1421">
-        <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-container-layout-1">
-          <h1 class="u-align-center u-text u-text-body-alt-color u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">LITTLE LAB STORIES</h1>
-          <p class="u-align-center u-text u-text-default u-text-2">TAMAN IMAJINASI ANAK SEMESTA</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & BASIC SETUP --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #050510; /* Dark Cyber Blue */
+            color: #ffffff;
+            font-family: 'Bangers', cursive;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden; /* Mencegah scroll bar tidak perlu */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* --- BACKGROUND ANIMATION (COMIC DOTS) --- */
+        .bg-comic {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#2a2a3e 20%, transparent 20%),
+                              radial-gradient(#1a1a2e 20%, transparent 20%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.3;
+            z-index: 0;
+            animation: scrollBg 60s linear infinite;
+        }
+
+        @keyframes scrollBg {
+            from { background-position: 0 0, 10px 10px; }
+            to { background-position: 400px 400px, 410px 410px; }
+        }
+
+        /* --- MAIN CARD CONTAINER --- */
+        .card {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            /* Efek Kaca Futuristik */
+            background: rgba(13, 13, 21, 0.6);
+            backdrop-filter: blur(5px);
+            border: 4px solid #000;
+            box-shadow: 10px 10px 0px #00eaff; /* Hard Shadow warna Cyan */
+            transform: skew(-2deg); /* Miring sedikit gaya komik */
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem); /* Responsive Font Size */
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-shadow: 
+                3px 3px 0 #000,
+                -1px -1px 0 #000,  
+                1px -1px 0 #000,
+                -1px 1px 0 #000,
+                1px 1px 0 #000;
+            margin-bottom: 20px;
+        }
+        
+        h1 span {
+            color: #ff0055; /* Neon Pink */
+            display: block;
+            font-size: clamp(2rem, 6vw, 4rem);
+        }
+
+        .badge-container {
+            margin-top: 30px;
+            display: inline-block;
+        }
+
+        .badge {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            background: #ffd700; /* Kuning Komik */
+            color: #000;
+            padding: 10px 40px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            border: 3px solid #000;
+            position: relative;
+            box-shadow: 0 0 15px #ffd700;
+        }
+
+        /* Glitch text effect CSS */
+        .badge::before {
+            content: "COMING SOON";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffd700;
+            opacity: 0.7;
+            z-index: -1;
+            animation: glitch-anim 2s infinite;
+        }
+
+        /* --- ANIMATED ELEMENTS (CSS DRAWINGS) --- */
+        
+        /* 1. FLASK (Gelas Kimia) */
+        .flask {
+            position: absolute;
+            bottom: -30px;
+            left: -40px;
+            width: 80px;
+            height: 100px;
+            z-index: 20;
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.5));
+        }
+        .flask-neck {
+            width: 25px; height: 40px; 
+            background: rgba(255,255,255,0.2); 
+            border: 3px solid #fff; border-bottom: none;
+            margin: 0 auto;
+        }
+        .flask-body {
+            width: 80px; height: 60px;
+            background: rgba(0, 234, 255, 0.2);
+            border: 3px solid #fff;
+            border-radius: 50% 50% 10% 10%;
+            position: relative;
+            overflow: hidden;
+        }
+        .liquid {
+            position: absolute; bottom: 0; left: 0;
+            width: 100%; height: 60%;
+            background: #00eaff;
+            border-top: 2px solid #fff;
+            animation: wave 2s infinite linear;
+        }
+
+        /* 2. ATOM */
+        .atom {
+            position: absolute;
+            top: -50px;
+            right: -40px;
+            width: 100px;
+            height: 100px;
+            z-index: 20;
+        }
+        .electron {
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            border: 2px solid #ff0055;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .electron:nth-child(1) { animation: rotateAtom 2s linear infinite; }
+        .electron:nth-child(2) { animation: rotateAtom 3s linear infinite reverse; width: 70%; height: 70%; border-color: #ffd700; }
+        .electron:nth-child(3) { animation: rotateAtom 4s linear infinite; width: 40%; height: 40%; border-color: #00eaff; }
+
+        .core {
+            width: 15px; height: 15px; background: #fff;
+            border-radius: 50%; border: 2px solid #000;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes floatCard {
+            0%, 100% { transform: skew(-2deg) translateY(0); }
+            50% { transform: skew(-2deg) translateY(-15px); }
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: skewY(0deg); }
+            50% { transform: skewY(5deg); }
+        }
+
+        @keyframes rotateAtom {
+            0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); }
+            100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); }
+        }
+
+        @keyframes glitch-anim {
+            0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 2px); }
+            20% { clip-path: inset(80% 0 10% 0); transform: translate(2px, -2px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(10% 0 30% 0); transform: translate(2px, -2px); }
+            80% { clip-path: inset(50% 0 20% 0); transform: translate(0px, 0px); }
+            100% { clip-path: inset(10% 0 80% 0); }
+        }
+
+        /* --- RESPONSIVE ADJUSTMENTS (MOBILE) --- */
+        @media screen and (max-width: 600px) {
+            .card {
+                padding: 3rem 1rem;
+                transform: skew(0deg); /* Hapus kemiringan di HP agar rapi */
+                animation: none; /* Matikan float agar hemat baterai */
+                margin-top: -50px; /* Sedikit ke atas */
+            }
+            
+            /* Pindahkan dekorasi agar tidak menutupi teks */
+            .flask {
+                left: 50%;
+                bottom: -60px;
+                transform: translateX(-50%);
+            }
+            .atom {
+                top: -60px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+            
+            h1 { font-size: 3rem; }
+            h1 span { font-size: 1.8rem; }
+            .badge { font-size: 1rem; padding: 8px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-comic"></div>
+
+    <div class="card">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="core"></div>
         </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-container-align-center u-section-2" id="carousel_1fd3">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-1">The Books</h2>
-        <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-1" data-image-width="1024" data-image-height="1536" data-href="kunang-kunang-emas.html" data-page-id="526002249" title="kunang-kunang-emas">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1"></div>
-            </div>
-            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-2" data-image-width="750" data-image-height="1250" data-href="lily-and-wishker.html" data-page-id="32792203" title="lily and wishker">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2"></div>
-            </div>
-            <div class="u-container-style u-dialog-link u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-3" data-image-width="1024" data-image-height="1536" data-href="#sec-1901">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-3"></div>
-            </div>
-          </div>
+
+        <h1>
+            Little Lab
+            <span>Stories</span>
+        </h1>
+
+        <div class="badge-container">
+            <div class="badge">COMING SOON</div>
         </div>
-      </div>
-    </section>
-    <section class="skrollable u-clearfix u-container-align-center u-gradient u-image u-parallax u-uploaded-video u-video u-section-3" id="carousel_4bf1" data-image-width="425" data-image-height="319">
-      <div class="u-background-video u-expanded" style="">
-        <div class="embed-responsive">
-          <video class="embed-responsive-item" data-autoplay="1" loop="" muted="1" autoplay="autoplay" playsinline="">
-            <source src="files/eac6bba4-a66c-41d7-b734-e7eefed41e99.mp4" type="video/mp4">
-            <p>Your browser does not support HTML5 video.</p>
-          </video>
-        </div>
-        <div class="u-video-shading"></div>
-      </div>
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-body-alt-color u-text-1">TAMAN IMAJINASI ANAK SEMESTA</h2>
-        <p class="u-align-center u-text u-text-body-alt-color u-text-2"> Where children slow down, explore, and rediscover the magic of imagination.<br>
-        </p>
-      </div>
-    </section>
-    <section class="u-clearfix u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-section-4" id="sec-31fd">
-      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
-        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
-          <div class="u-layout">
-            <div class="u-layout-row">
-              <div class="u-container-align-center u-container-style u-image u-image-round u-layout-cell u-radius u-right-cell u-size-26-lg u-size-26-xl u-size-60-md u-size-60-sm u-size-60-xs u-image-1" data-image-width="1024" data-image-height="1024">
-                <div class="u-container-layout u-container-layout-1"></div>
-              </div>
-              <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-left-cell u-radius u-shape-round u-size-34-lg u-size-34-xl u-size-60-md u-size-60-sm u-size-60-xs u-white u-layout-cell-2">
-                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
-                  <h2 class="u-align-center u-heading-font u-text u-text-1">Taman Imajinasi Anak Semesta (TIAS) </h2>
-                  <p class="u-align-center u-text u-text-font u-text-2"> Taman Imajinasi Anak Semesta (TIAS) is a creative sanctuary designed to nurture children’s imagination in a fast-paced, digital world. Through nature-inspired mixed media art, storytelling, and hands-on exploration, TIAS helps children express themselves, connect with their environment, and experience creativity as a joyful journey—not just the act of making art.<br>
-                  </p>
-                </div>
-              </div>
+
+        <div class="flask">
+            <div class="flask-neck"></div>
+            <div class="flask-body">
+                <div class="liquid"></div>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
-    <section class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-valign-bottom-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-white u-section-5" id="carousel_a04c">
-      <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-container-style u-expanded-width u-grey-5 u-group u-shape-rectangle u-group-1">
-        <div class="u-container-layout u-container-layout-1">
-          <h2 class="u-align-center u-text u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">Mr. BirdFlute</h2>
-          <p class="u-align-center u-text u-text-2"> TIAS is founded by Rangga Firmansyah, also known as Mr. Birdflut a writer, educator, game researcher, and storyteller whose work blends language, culture, and art in poetic ways. He is also the founder of littlelabstories.com. With a deep passion for mindful, nature-based creativity, Rangga creates gentle spaces where children can slow down, imagine, and explore through the beauty of natural patterns, textures, and expressive drawing methods such as his FloLines EmoGraph approach.<br>
-          </p>
-          <div class="u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
-            <div class="u-gallery-inner u-gallery-inner-1">
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="472" data-image-height="504">
-                  <img class="u-back-image u-expanded" src="images/Snag_17b8038.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-1"></div>
-              </div>
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="458" data-image-height="518">
-                  <img class="u-back-image u-expanded" src="images/Snag_17ba3fd.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-2"></div>
-              </div>
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="462" data-image-height="492">
-                  <img class="u-back-image u-expanded" src="images/Snag_17bc83e.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-3"></div>
-              </div>
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="466" data-image-height="480">
-                  <img class="u-back-image u-expanded" src="images/Snag_17be887.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-4"></div>
-              </div>
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="468" data-image-height="502">
-                  <img class="u-back-image u-expanded" src="images/Snag_17c0d75.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-5"></div>
-              </div>
-              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
-                <div class="u-back-slide" data-image-width="474" data-image-height="532">
-                  <img class="u-back-image u-expanded" src="images/Snag_17c24b6.png">
-                </div>
-                <div class="u-over-slide u-shading u-over-slide-6"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="https://www.instagram.com/mr.birdflute/" class="u-active-grey-80 u-align-left u-border-2 u-border-active-grey-80 u-border-hover-grey-80 u-border-palette-3-base u-btn u-btn-round u-button-style u-hover-grey-80 u-none u-radius u-btn-1" target="_blank">FOLLOW INSTAGRAM </a>
-    </section>
-    <section class="u-clearfix u-container-align-center u-section-6" id="sec-15ab">
-      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
-        <h2 class="u-align-center u-text u-text-1">The Books</h2>
-        <div class="u-expanded-width u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-1" data-image-width="1024" data-image-height="1536" data-href="kunang-kunang-emas.html" data-page-id="526002249" title="kunang-kunang-emas">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1"></div>
-            </div>
-            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-2" data-image-width="750" data-image-height="1250" data-href="lily-and-wishker.html" data-page-id="32792203" title="lily and wishker">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2"></div>
-            </div>
-            <div class="u-container-style u-dialog-link u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-3" data-image-width="1024" data-image-height="1536" data-href="#sec-1901">
-              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-3"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="u-clearfix u-grey-light-2 u-typography-custom-page-typography-12--Map u-section-7" id="sec-4354">
-      <div class="u-expanded u-grey-light-2 u-map">
-        <div class="embed-responsive">
-          <iframe class="embed-responsive-item" src="https://maps.google.com/maps?output=embed&amp;q=Gg.%20Klp.%20Buntu%20No.%201%20kedonganan%20(Bangunan%20joglo)%2C%20KAB.%20BADUNG%2C%20KUTA%2C%20BALI%2C%20ID%2C%2080361&amp;t=m" data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyR2cuJTIwS2xwLiUyMEJ1bnR1JTIwTm8uJTIwMSUyMGtlZG9uZ2FuYW4lMjAoQmFuZ3VuYW4lMjBqb2dsbyklMkMlMjBLQUIuJTIwQkFEVU5HJTJDJTIwS1VUQSUyQyUyMEJBTEklMkMlMjBJRCUyQyUyMDgwMzYxJTIyJTJDJTIyem9vbSUyMiUzQW51bGwlMkMlMjJ0eXBlSWQlMjIlM0ElMjJyb2FkJTIyJTJDJTIybGFuZyUyMiUzQW51bGwlMkMlMjJhcGlLZXklMjIlM0FudWxsJTJDJTIybWFya2VycyUyMiUzQSU1QiU1RCU3RA=="></iframe>
-        </div>
-      </div>
-    </section>
-    
-    
-    
-    
-    
-  <section class="u-align-center u-black u-clearfix u-container-align-center u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle-lg u-valign-middle-xl u-dialog-section-11" id="sec-1901">
-      <div class="u-align-center u-container-align-center u-container-style u-dialog u-image u-shading u-shape-rectangle u-image-1" data-image-width="1024" data-image-height="1536">
-        <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-valign-top-xs u-container-layout-1">
-          <h2 class="u-custom-font u-text u-text-body-alt-color u-text-1">COMING SOON</h2>
-        </div>
-        <button class="u-dialog-close-button u-icon u-text-grey-5 u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 413.348 413.348" style=""><use xlink:href="#svg-5801"></use></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 413.348 413.348" id="svg-5801"><path d="m413.348 24.354-24.354-24.354-182.32 182.32-182.32-182.32-24.354 24.354 182.32 182.32-182.32 182.32 24.354 24.354 182.32-182.32 182.32 182.32 24.354-24.354-182.32-182.32z"></path></svg></button>
-      </div>
-    </section><style>.u-dialog-section-11 .u-image-1 {
-  width: 566px;
-  min-height: 440px;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('np://user.desktop.nicepage.com/Site_1717722553/images/Untitled-2-min.jpg?rand=5423');
-  background-position: 50% 50%;
-  margin: 60px auto;
-}
+    </div>
 
-.u-dialog-section-11 .u-container-layout-1 {
-  padding: 55px 30px 0;
-}
+    <script>
+        // Efek agar elemen bergerak sedikit saat mouse digerakkan (Hanya di Desktop)
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                const card = document.querySelector('.card');
+                const x = (window.innerWidth - e.pageX * 2) / 50;
+                const y = (window.innerHeight - e.pageY * 2) / 50;
+                card.style.transform = `skew(-2deg) translate(${x}px, ${y}px)`;
+            });
+        }
+    </script>
 
-.u-dialog-section-11 .u-text-1 {
-  font-weight: 700;
-  font-family: "Archivo Black";
-  font-size: 3.75rem;
-  text-transform: uppercase;
-  text-shadow: 2px 2px 23px rgba(0,0,0,0.6);
-  margin: 65px 0 0;
-}
-
-.u-dialog-section-11 .u-icon-1 {
-  width: 23px;
-  height: 23px;
-  left: auto;
-  top: 17px;
-  position: absolute;
-  right: 16px;
-}
-
-@media (max-width: 1199px) {
-  .u-dialog-section-11 .u-image-1 {
-    height: auto;
-  }
-
-  .u-dialog-section-11 .u-text-1 {
-    margin-left: 0;
-    margin-right: 0;
-  }
-}
-
-@media (max-width: 991px) {
-  .u-dialog-section-11 .u-image-1 {
-    margin-top: 193px;
-  }
-
-  .u-dialog-section-11 .u-container-layout-1 {
-    padding-top: 50px;
-    padding-bottom: 0;
-  }
-}
-
-@media (max-width: 767px) {
-  .u-dialog-section-11 .u-image-1 {
-    width: 540px;
-  }
-
-  .u-dialog-section-11 .u-container-layout-1 {
-    padding-top: 40px;
-    padding-right: 25px;
-  }
-
-  .u-dialog-section-11 .u-text-1 {
-    font-size: 3.4375rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .u-dialog-section-11 .u-image-1 {
-    width: 340px;
-    min-height: 399px;
-  }
-
-  .u-dialog-section-11 .u-container-layout-1 {
-    padding-top: 80px;
-    padding-left: 25px;
-    padding-bottom: 25px;
-  }
-
-  .u-dialog-section-11 .u-text-1 {
-    font-size: 3.75rem;
-  }
-}</style>
-</body></html>
+</body>
+</html>
