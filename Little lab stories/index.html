@@ -1,298 +1,207 @@
 <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Little Lab Stories - COMING SOON</title>
+<html style="font-size: 16px;" lang="en-ID"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="NFT BOOK, Digital Book, Kids Book, billingual book">
+    <meta name="description" content="Creative sanctuary designed to nurture children’s imagination in a fast-paced, digital world. Through nature-inspired mixed media art, storytelling, and hands-on exploration, TIAS helps children express themselves, connect with their environment, and experience creativity as a joyful journey—not just the act of making art.">
+    <title>Little Lab Stories</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+<link rel="stylesheet" href="index.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <meta name="generator" content="Nicepage 7.8.23, nicepage.com">
+    <meta property="og:title" content="Little Lab Stories">
+    <meta property="og:description" content="deep passion for mindful, nature-based creativity, Rangga creates gentle spaces where children can slow down, imagine, and explore through the beauty of natural patterns, textures, and expressive drawing methods such as his FloLines EmoGraph approach.">
+    <meta property="og:image" content="https://littlelabstories.com/images/TIASlogonew.png">
+    <meta property="og:url" content="https://littlelabstories.com">
+    <link rel="icon" href="images/TIASlogonew.png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- RESET & BASIC SETUP --- */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        body {
-            background-color: #050510; /* Dark Cyber Blue */
-            color: #ffffff;
-            font-family: 'Bangers', cursive;
-            height: 100vh;
-            width: 100%;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        /* --- BACKGROUND (COMIC DOTS) --- */
-        .bg-comic {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(#2a2a3e 20%, transparent 20%),
-                              radial-gradient(#1a1a2e 20%, transparent 20%);
-            background-size: 20px 20px;
-            background-position: 0 0, 10px 10px;
-            opacity: 0.3;
-            z-index: 0;
-            animation: scrollBg 60s linear infinite;
-        }
-
-        /* --- LASER SYSTEM (BARU) --- */
-        .laser-system {
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 5; /* Di atas background, di bawah kartu utama */
-            pointer-events: none;
-            overflow: hidden;
-        }
-
-        .laser {
-            position: absolute;
-            background: linear-gradient(90deg, transparent, var(--color), transparent);
-            box-shadow: 0 0 20px var(--color), 0 0 40px var(--color);
-            opacity: 0.8;
-            mix-blend-mode: screen; /* Agar menyatu seperti cahaya */
-        }
-
-        /* Laser 1: Horizontal Scanner (Cyan) */
-        .laser-1 {
-            --color: #00f3ff;
-            height: 2px;
-            width: 100%;
-            top: 10%;
-            left: -100%;
-            animation: scanHorizontal 4s linear infinite;
-        }
-
-        /* Laser 2: Vertical Beam (Pink) */
-        .laser-2 {
-            --color: #ff0055;
-            width: 3px;
-            height: 100%;
-            top: -100%;
-            left: 20%;
-            animation: scanVertical 3s ease-in-out infinite;
-        }
-
-        /* Laser 3: Diagonal Fast (Yellow) */
-        .laser-3 {
-            --color: #ffd700;
-            width: 200%;
-            height: 1px;
-            top: 50%;
-            left: -50%;
-            transform: rotate(45deg);
-            animation: scanDiagonal 5s linear infinite;
-            opacity: 0.5;
-        }
-
-        /* Partikel Gemerlap (Sparkles) */
-        .sparkle {
-            position: absolute;
-            width: 4px; height: 4px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #fff, 0 0 20px #00f3ff;
-            animation: twinkle 1.5s infinite alternate;
-        }
-
-        /* --- MAIN CARD CONTAINER --- */
-        .card {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            padding: 2rem;
-            max-width: 800px;
-            width: 90%;
-            background: rgba(13, 13, 21, 0.7); /* Lebih gelap agar laser terlihat */
-            backdrop-filter: blur(8px);
-            border: 3px solid #00f3ff; /* Border diubah jadi Cyan Neon */
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3), inset 0 0 20px rgba(0, 243, 255, 0.1);
-            transform: skew(-2deg);
-            animation: floatCard 4s ease-in-out infinite;
-        }
-
-        /* Sudut-sudut Tech (Corner Accents) */
-        .card::after, .card::before {
-            content: ''; position: absolute; width: 20px; height: 20px;
-            border: 3px solid #ff0055; transition: 0.3s;
-        }
-        .card::before { top: -3px; left: -3px; border-bottom: none; border-right: none; }
-        .card::after { bottom: -3px; right: -3px; border-top: none; border-left: none; }
-
-        /* --- TYPOGRAPHY --- */
-        h1 {
-            font-size: clamp(3rem, 10vw, 6rem);
-            line-height: 0.9;
-            text-transform: uppercase;
-            text-shadow: 4px 4px 0 #000;
-            margin-bottom: 20px;
-            position: relative;
-        }
-        
-        h1 span {
-            color: #ff0055;
-            display: block;
-            font-size: clamp(2rem, 6vw, 4rem);
-            text-shadow: 0 0 10px #ff0055; /* Neon Glow pada teks */
-        }
-
-        .badge-container { margin-top: 30px; display: inline-block; }
-
-        .badge {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.5rem;
-            background: #ffd700;
-            color: #000;
-            padding: 10px 40px;
-            font-weight: 800;
-            letter-spacing: 3px;
-            border: 3px solid #000;
-            position: relative;
-            box-shadow: 5px 5px 0 #00f3ff; /* Shadow Cyan */
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .badge:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #00f3ff; }
-
-        /* --- DEKORASI LAMA (ATOM & FLASK) --- */
-        .flask {
-            position: absolute; bottom: -30px; left: -40px;
-            width: 80px; height: 100px; z-index: 20;
-            filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
-        }
-        .flask-neck {
-            width: 25px; height: 40px; 
-            background: rgba(255,255,255,0.1); 
-            border: 3px solid #fff; border-bottom: none; margin: 0 auto;
-        }
-        .flask-body {
-            width: 80px; height: 60px;
-            background: rgba(0, 234, 255, 0.2);
-            border: 3px solid #fff;
-            border-radius: 50% 50% 10% 10%;
-            position: relative; overflow: hidden;
-        }
-        .liquid {
-            position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
-            background: #00eaff; border-top: 2px solid #fff;
-            box-shadow: 0 0 20px #00eaff; /* Cairan bercahaya */
-            animation: wave 2s infinite linear;
-        }
-
-        .atom {
-            position: absolute; top: -50px; right: -40px;
-            width: 100px; height: 100px; z-index: 20;
-        }
-        .electron {
-            position: absolute; top: 50%; left: 50%;
-            width: 100%; height: 100%;
-            border: 2px solid #ff0055; border-radius: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 5px #ff0055;
-        }
-        .electron:nth-child(1) { animation: rotateAtom 2s linear infinite; }
-        .electron:nth-child(2) { animation: rotateAtom 3s linear infinite reverse; width: 70%; height: 70%; border-color: #ffd700; }
-        .electron:nth-child(3) { animation: rotateAtom 4s linear infinite; width: 40%; height: 40%; border-color: #00eaff; }
-        .core {
-            width: 15px; height: 15px; background: #fff;
-            border-radius: 50%; border: 2px solid #000;
-            position: absolute; top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            box-shadow: 0 0 15px #fff;
-        }
-
-        /* --- ANIMATION KEYFRAMES --- */
-        @keyframes scrollBg { from { background-position: 0 0, 10px 10px; } to { background-position: 400px 400px, 410px 410px; } }
-        @keyframes floatCard { 0%, 100% { transform: skew(-2deg) translateY(0); } 50% { transform: skew(-2deg) translateY(-10px); } }
-        @keyframes wave { 0%, 100% { transform: skewY(0deg); } 50% { transform: skewY(5deg); } }
-        @keyframes rotateAtom { 0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); } 100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); } }
-        
-        /* Laser Animations */
-        @keyframes scanHorizontal {
-            0% { left: -100%; opacity: 0; }
-            50% { opacity: 1; }
-            100% { left: 100%; opacity: 0; }
-        }
-        @keyframes scanVertical {
-            0% { top: -100%; opacity: 0; }
-            20% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
-        }
-        @keyframes scanDiagonal {
-            0% { transform: rotate(45deg) translateY(-200px); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: rotate(45deg) translateY(200vh); opacity: 0; }
-        }
-        @keyframes twinkle {
-            0% { transform: scale(0.5); opacity: 0.3; }
-            100% { transform: scale(1.2); opacity: 1; }
-        }
-
-        /* --- RESPONSIVE MOBILE --- */
-        @media screen and (max-width: 600px) {
-            .card { padding: 3rem 1rem; transform: skew(0deg); animation: none; margin-top: -30px; border-width: 2px; }
-            .flask { left: 50%; bottom: -60px; transform: translateX(-50%); }
-            .atom { top: -60px; right: 50%; transform: translateX(50%); }
-            h1 { font-size: 3rem; }
-            h1 span { font-size: 1.8rem; }
-            /* Kurangi intensitas laser di HP agar tidak berat */
-            .laser { opacity: 0.5; } 
-        }
-    </style>
-</head>
-<body>
-
-    <div class="bg-comic"></div>
-
-    <div class="laser-system">
-        <div class="laser laser-1"></div> <div class="laser laser-2"></div> <div class="laser laser-3"></div> <div class="sparkle" style="top: 20%; left: 20%; animation-delay: 0s;"></div>
-        <div class="sparkle" style="top: 80%; left: 70%; animation-delay: 0.5s;"></div>
-        <div class="sparkle" style="top: 40%; left: 90%; animation-delay: 1s;"></div>
-    </div>
-
-    <div class="card">
-        <div class="atom">
-            <div class="electron"></div>
-            <div class="electron"></div>
-            <div class="electron"></div>
-            <div class="core"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|ADLaM+Display:400">
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Little lab Stories"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-home-page="Home.html" data-home-page-title="Home" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="en"> 
+    <section class="u-align-center u-clearfix u-container-align-center u-grey-5 u-valign-middle-md u-valign-top-lg u-section-1" src="" id="carousel_3dba">
+      <div class="u-container-align-center u-container-style u-expanded-width u-group u-image u-parallax u-shading u-image-1" data-image-width="2546" data-image-height="1421">
+        <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-sm u-container-layout-1">
+          <h1 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1">LITTLE LAB STORIES</h1>
+          <p class="u-align-center u-custom-font u-text u-text-default u-text-2">TAMAN IMAJINASI ANAK SEMESTA</p>
         </div>
-
-        <h1>
-            Little Lab
-            <span>Stories</span>
-        </h1>
-
-        <div class="badge-container">
-            <div class="badge">COMING SOON</div>
-        </div>
-
-        <div class="flask">
-            <div class="flask-neck"></div>
-            <div class="flask-body">
-                <div class="liquid"></div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="carousel_1fd3">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-text u-text-1" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;middle&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">The Books</h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-1" data-image-width="1024" data-image-height="1536" data-href="kunang-kunang-emas.html" data-page-id="526002249" title="kunang-kunang-emas" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1"></div>
             </div>
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-2" data-image-width="750" data-image-height="1250" data-href="lily-and-wishker.html" data-page-id="32792203" title="lily and wishker" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2"></div>
+            </div>
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-3" data-image-width="1024" data-image-height="1536" data-href="Sande-and-the-sea-friends.html" data-page-id="83444769" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}" title="Sande-and-the-sea-friends">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-3"></div>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <script>
-        if (window.matchMedia("(min-width: 768px)").matches) {
-            document.addEventListener('mousemove', (e) => {
-                const card = document.querySelector('.card');
-                const x = (window.innerWidth - e.pageX * 2) / 60;
-                const y = (window.innerHeight - e.pageY * 2) / 60;
-                
-                // Card bergerak berlawanan
-                card.style.transform = `skew(-2deg) translate(${x}px, ${y}px)`;
-                
-                // Laser system bergerak sedikit untuk efek kedalaman
-                document.querySelector('.laser-system').style.transform = `translate(${x*0.5}px, ${y*0.5}px)`;
-            });
-        }
-    </script>
-
-</body>
-</html>
+      </div>
+    </section>
+    <section class="skrollable u-clearfix u-gradient u-image u-parallax u-uploaded-video u-video u-section-3" id="carousel_4bf1" data-image-width="425" data-image-height="319">
+      <div class="u-background-video u-expanded" style="">
+        <div class="embed-responsive">
+          <video class="embed-responsive-item" data-autoplay="1" loop="" muted="1" autoplay="autoplay" playsinline="">
+            <source src="files/eac6bba4-a66c-41d7-b734-e7eefed41e99.mp4" type="video/mp4">
+            <p>Your browser does not support HTML5 video.</p>
+          </video>
+        </div>
+        <div class="u-video-shading"></div>
+      </div>
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-1" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;middle&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">TAMAN IMAJINASI ANAK SEMESTA</h2>
+        <p class="u-align-center u-custom-font u-text u-text-body-alt-color u-text-2"> Where children slow down, explore, and rediscover the magic of imagination.<br>
+        </p>
+      </div>
+    </section>
+    <section class="u-clearfix u-container-align-center-md u-container-align-center-sm u-container-align-center-xs u-section-4" id="sec-31fd">
+      <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-30 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-align-center u-container-style u-image u-image-round u-layout-cell u-radius u-right-cell u-size-26-lg u-size-26-xl u-size-60-md u-size-60-sm u-size-60-xs u-image-1" data-image-width="1024" data-image-height="1024" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+                <div class="u-container-layout u-container-layout-1"></div>
+              </div>
+              <div class="u-align-center u-container-align-center u-container-style u-layout-cell u-left-cell u-radius u-shape-round u-size-34-lg u-size-34-xl u-size-60-md u-size-60-sm u-size-60-xs u-white u-layout-cell-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">
+                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-2">
+                  <h2 class="u-align-center u-heading-font u-text u-text-1">Taman Imajinasi Anak Semesta (TIAS) </h2>
+                  <p class="u-align-center u-text u-text-font u-text-2"> Taman Imajinasi Anak Semesta (TIAS) is a creative sanctuary designed to nurture children’s imagination in a fast-paced, digital world. Through nature-inspired mixed media art, storytelling, and hands-on exploration, TIAS helps children express themselves, connect with their environment, and experience creativity as a joyful journey—not just the act of making art.<br>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-xl u-valign-top-lg u-valign-top-md u-valign-top-sm u-white u-section-5" id="carousel_a04c">
+      <div class="u-align-center u-container-align-center u-container-align-center-lg u-container-align-center-md u-container-align-center-sm u-container-align-center-xl u-container-style u-expanded-width u-group u-shape-rectangle u-white u-group-1">
+        <div class="u-container-layout u-container-layout-1">
+          <h2 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0">Mr. BirdFlute</h2>
+          <p class="u-align-center u-text u-text-2" data-animation-name="customAnimationIn" data-animation-duration="1000" data-animation-delay="0"> TIAS is founded by Rangga Firmansyah, also known as Mr. Birdflut a writer, educator, game researcher, and storyteller whose work blends language, culture, and art in poetic ways. He is also the founder of littlelabstories.com. With a deep passion for mindful, nature-based creativity, Rangga creates gentle spaces where children can slow down, imagine, and explore through the beauty of natural patterns, textures, and expressive drawing methods such as his FloLines EmoGraph approach.<br>
+          </p>
+          <div class="u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
+            <div class="u-gallery-inner u-gallery-inner-1">
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="472" data-image-height="504">
+                  <img class="u-back-image u-expanded" src="images/Snag_17b8038.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-1"></div>
+              </div>
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="458" data-image-height="518">
+                  <img class="u-back-image u-expanded" src="images/Snag_17ba3fd.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-2"></div>
+              </div>
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="462" data-image-height="492">
+                  <img class="u-back-image u-expanded" src="images/Snag_17bc83e.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-3"></div>
+              </div>
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="466" data-image-height="480">
+                  <img class="u-back-image u-expanded" src="images/Snag_17be887.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-4"></div>
+              </div>
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="468" data-image-height="502">
+                  <img class="u-back-image u-expanded" src="images/Snag_17c0d75.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-5"></div>
+              </div>
+              <div class="u-effect-fade u-effect-hover-zoom u-gallery-item">
+                <div class="u-back-slide" data-image-width="474" data-image-height="532">
+                  <img class="u-back-image u-expanded" src="images/Snag_17c24b6.png">
+                </div>
+                <div class="u-over-slide u-shading u-over-slide-6"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/mr.birdflute/" class="u-active-grey-80 u-align-left u-border-2 u-border-active-grey-80 u-border-hover-grey-80 u-border-palette-3-base u-btn u-btn-round u-button-style u-hover-grey-80 u-none u-radius u-btn-1" target="_blank">FOLLOW INSTAGRAM </a>
+    </section>
+    <section class="u-align-center u-clearfix u-container-align-center-lg u-container-align-center-xl u-valign-middle-md u-valign-top-sm u-section-6" id="sec-fd03">
+      <div class="u-expanded-width u-shape u-shape-rectangle u-white u-shape-1"></div>
+      <h5 class="u-custom-font u-font-montserrat u-text u-text-1"> Language Courses<br>
+      </h5>
+      <h1 class="u-text u-text-2"> Learn Bahasa Indonesia or English, for Kids</h1>
+      <h5 class="u-custom-font u-font-montserrat u-text u-text-3">By Ms. Laura</h5>
+      <p class="u-text u-text-4"> Welcome to a classroom where learning feels like play and every child’s voice matters!<br>With Ms. Laura’s warm and interactive teaching style, kids explore Bahasa Indonesia or English through stories, games, movement, and real-life conversations. Our goal is simple: to help children feel confident, communicate clearly, and enjoy every moment of learning.<br>
+        <br>Whether your child is just beginning or already familiar with the language, our lessons are shaped to match their pace and personality. Each session is thoughtfully created to build strong language skills while keeping curiosity and creativity alive.<br>
+      </p>
+      <div class="u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-1">
+            <div class="u-container-layout u-similar-container u-container-layout-1">
+              <img alt="" class="u-bottom-left-radius-20 u-expanded-width u-image u-image-round u-top-right-radius-20 u-image-1" data-image-width="800" data-image-height="800" src="images/bn.jpg" data-href="https://wa.me/6285921162228?text=Hi%20Little%20Lab%20Stories" data-target="_blank">
+              <h3 class="u-text u-text-default u-text-5">Online Course</h3>
+              <p class="u-text u-text-6"> Learn from anywhere!<br>Our online classes are lively, engaging, and perfect for kids who enjoy interactive activities. Every lesson includes games, storytelling, and hands-on tasks that make learning meaningful — all from the comfort of home.<br>
+              </p>
+              <a href="https://wa.me/6285921162228?text=Hi%20Little%20Lab%20Stories" class="u-active-none u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-1" target="_blank">learn more</a>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item u-white u-list-item-2">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <img alt="" class="u-bottom-left-radius-20 u-expanded-width u-image u-image-round u-top-right-radius-20 u-image-2" data-image-width="1200" data-image-height="1002" src="images/kj.jpg" data-href="https://wa.me/6285921162228?text=Hi%20Little%20Lab%20Stories" data-target="_blank">
+              <h3 class="u-text u-text-default u-text-7">Offline Course</h3>
+              <p class="u-text u-text-8"> Learn face-to-face with Ms. Laura!<br>These in-person sessions offer a warm, focused space where kids can practice speaking naturally through role-plays, real conversations, and creative activities. A great fit for children who learn best with personal guidance and direct interaction.<br>
+              </p>
+              <a href="https://wa.me/6285921162228?text=Hi%20Little%20Lab%20Stories" class="u-active-none u-border-2 u-border-active-black u-border-hover-black u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-base u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-2" target="_blank">learn more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-7" id="sec-15ab">
+      <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-sm u-sheet-1">
+        <h2 class="u-align-center u-custom-font u-text u-text-1" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;middle&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">The Books</h2>
+        <div class="u-expanded-width u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-1" data-image-width="1024" data-image-height="1536" data-href="kunang-kunang-emas.html" data-page-id="526002249" title="kunang-kunang-emas" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1"></div>
+            </div>
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-2" data-image-width="750" data-image-height="1250" data-href="lily-and-wishker.html" data-page-id="32792203" title="lily and wishker" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-2"></div>
+            </div>
+            <div class="u-container-style u-image u-image-round u-list-item u-radius-25 u-repeater-item u-image-3" data-image-width="1024" data-image-height="1536" data-href="Sande-and-the-sea-friends.html" data-page-id="83444769" data-custom-animation="{&quot;animation&quot;:{&quot;XXL&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XL&quot;:{&quot;steps&quot;:[{&quot;dist&quot;:0.5,&quot;skip&quot;:0,&quot;blur&quot;:0,&quot;sticky&quot;:false,&quot;fixed&quot;:true,&quot;mx&quot;:0,&quot;my&quot;:0,&quot;op&quot;:0,&quot;rot&quot;:0,&quot;sx&quot;:1,&quot;sy&quot;:1,&quot;bgy&quot;:0}],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;LG&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;MD&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:false,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;SM&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}},&quot;XS&quot;:{&quot;steps&quot;:[],&quot;hidden&quot;:true,&quot;start&quot;:{&quot;at&quot;:&quot;bottom&quot;,&quot;off&quot;:0},&quot;end&quot;:{&quot;at&quot;:&quot;top&quot;,&quot;off&quot;:0}}},&quot;container&quot;:&quot;&quot;}" title="Sande-and-the-sea-friends">
+              <div class="u-container-layout u-similar-container u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+    
+  
+</body></html>

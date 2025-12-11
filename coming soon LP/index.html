@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Little Lab Stories - COMING SOON</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & BASIC SETUP --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #050510; /* Dark Cyber Blue */
+            color: #ffffff;
+            font-family: 'Bangers', cursive;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* --- BACKGROUND (COMIC DOTS) --- */
+        .bg-comic {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(#2a2a3e 20%, transparent 20%),
+                              radial-gradient(#1a1a2e 20%, transparent 20%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.3;
+            z-index: 0;
+            animation: scrollBg 60s linear infinite;
+        }
+
+        /* --- LASER SYSTEM (BARU) --- */
+        .laser-system {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 5; /* Di atas background, di bawah kartu utama */
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .laser {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--color), transparent);
+            box-shadow: 0 0 20px var(--color), 0 0 40px var(--color);
+            opacity: 0.8;
+            mix-blend-mode: screen; /* Agar menyatu seperti cahaya */
+        }
+
+        /* Laser 1: Horizontal Scanner (Cyan) */
+        .laser-1 {
+            --color: #00f3ff;
+            height: 2px;
+            width: 100%;
+            top: 10%;
+            left: -100%;
+            animation: scanHorizontal 4s linear infinite;
+        }
+
+        /* Laser 2: Vertical Beam (Pink) */
+        .laser-2 {
+            --color: #ff0055;
+            width: 3px;
+            height: 100%;
+            top: -100%;
+            left: 20%;
+            animation: scanVertical 3s ease-in-out infinite;
+        }
+
+        /* Laser 3: Diagonal Fast (Yellow) */
+        .laser-3 {
+            --color: #ffd700;
+            width: 200%;
+            height: 1px;
+            top: 50%;
+            left: -50%;
+            transform: rotate(45deg);
+            animation: scanDiagonal 5s linear infinite;
+            opacity: 0.5;
+        }
+
+        /* Partikel Gemerlap (Sparkles) */
+        .sparkle {
+            position: absolute;
+            width: 4px; height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #fff, 0 0 20px #00f3ff;
+            animation: twinkle 1.5s infinite alternate;
+        }
+
+        /* --- MAIN CARD CONTAINER --- */
+        .card {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            width: 90%;
+            background: rgba(13, 13, 21, 0.7); /* Lebih gelap agar laser terlihat */
+            backdrop-filter: blur(8px);
+            border: 3px solid #00f3ff; /* Border diubah jadi Cyan Neon */
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.3), inset 0 0 20px rgba(0, 243, 255, 0.1);
+            transform: skew(-2deg);
+            animation: floatCard 4s ease-in-out infinite;
+        }
+
+        /* Sudut-sudut Tech (Corner Accents) */
+        .card::after, .card::before {
+            content: ''; position: absolute; width: 20px; height: 20px;
+            border: 3px solid #ff0055; transition: 0.3s;
+        }
+        .card::before { top: -3px; left: -3px; border-bottom: none; border-right: none; }
+        .card::after { bottom: -3px; right: -3px; border-top: none; border-left: none; }
+
+        /* --- TYPOGRAPHY --- */
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            line-height: 0.9;
+            text-transform: uppercase;
+            text-shadow: 4px 4px 0 #000;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        h1 span {
+            color: #ff0055;
+            display: block;
+            font-size: clamp(2rem, 6vw, 4rem);
+            text-shadow: 0 0 10px #ff0055; /* Neon Glow pada teks */
+        }
+
+        .badge-container { margin-top: 30px; display: inline-block; }
+
+        .badge {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            background: #ffd700;
+            color: #000;
+            padding: 10px 40px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            border: 3px solid #000;
+            position: relative;
+            box-shadow: 5px 5px 0 #00f3ff; /* Shadow Cyan */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .badge:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 #00f3ff; }
+
+        /* --- DEKORASI LAMA (ATOM & FLASK) --- */
+        .flask {
+            position: absolute; bottom: -30px; left: -40px;
+            width: 80px; height: 100px; z-index: 20;
+            filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+        }
+        .flask-neck {
+            width: 25px; height: 40px; 
+            background: rgba(255,255,255,0.1); 
+            border: 3px solid #fff; border-bottom: none; margin: 0 auto;
+        }
+        .flask-body {
+            width: 80px; height: 60px;
+            background: rgba(0, 234, 255, 0.2);
+            border: 3px solid #fff;
+            border-radius: 50% 50% 10% 10%;
+            position: relative; overflow: hidden;
+        }
+        .liquid {
+            position: absolute; bottom: 0; left: 0; width: 100%; height: 60%;
+            background: #00eaff; border-top: 2px solid #fff;
+            box-shadow: 0 0 20px #00eaff; /* Cairan bercahaya */
+            animation: wave 2s infinite linear;
+        }
+
+        .atom {
+            position: absolute; top: -50px; right: -40px;
+            width: 100px; height: 100px; z-index: 20;
+        }
+        .electron {
+            position: absolute; top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            border: 2px solid #ff0055; border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 5px #ff0055;
+        }
+        .electron:nth-child(1) { animation: rotateAtom 2s linear infinite; }
+        .electron:nth-child(2) { animation: rotateAtom 3s linear infinite reverse; width: 70%; height: 70%; border-color: #ffd700; }
+        .electron:nth-child(3) { animation: rotateAtom 4s linear infinite; width: 40%; height: 40%; border-color: #00eaff; }
+        .core {
+            width: 15px; height: 15px; background: #fff;
+            border-radius: 50%; border: 2px solid #000;
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 15px #fff;
+        }
+
+        /* --- ANIMATION KEYFRAMES --- */
+        @keyframes scrollBg { from { background-position: 0 0, 10px 10px; } to { background-position: 400px 400px, 410px 410px; } }
+        @keyframes floatCard { 0%, 100% { transform: skew(-2deg) translateY(0); } 50% { transform: skew(-2deg) translateY(-10px); } }
+        @keyframes wave { 0%, 100% { transform: skewY(0deg); } 50% { transform: skewY(5deg); } }
+        @keyframes rotateAtom { 0% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(0deg); } 100% { transform: translate(-50%, -50%) rotateX(70deg) rotateZ(360deg); } }
+        
+        /* Laser Animations */
+        @keyframes scanHorizontal {
+            0% { left: -100%; opacity: 0; }
+            50% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+        @keyframes scanVertical {
+            0% { top: -100%; opacity: 0; }
+            20% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        @keyframes scanDiagonal {
+            0% { transform: rotate(45deg) translateY(-200px); opacity: 0; }
+            50% { opacity: 0.8; }
+            100% { transform: rotate(45deg) translateY(200vh); opacity: 0; }
+        }
+        @keyframes twinkle {
+            0% { transform: scale(0.5); opacity: 0.3; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* --- RESPONSIVE MOBILE --- */
+        @media screen and (max-width: 600px) {
+            .card { padding: 3rem 1rem; transform: skew(0deg); animation: none; margin-top: -30px; border-width: 2px; }
+            .flask { left: 50%; bottom: -60px; transform: translateX(-50%); }
+            .atom { top: -60px; right: 50%; transform: translateX(50%); }
+            h1 { font-size: 3rem; }
+            h1 span { font-size: 1.8rem; }
+            /* Kurangi intensitas laser di HP agar tidak berat */
+            .laser { opacity: 0.5; } 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-comic"></div>
+
+    <div class="laser-system">
+        <div class="laser laser-1"></div> <div class="laser laser-2"></div> <div class="laser laser-3"></div> <div class="sparkle" style="top: 20%; left: 20%; animation-delay: 0s;"></div>
+        <div class="sparkle" style="top: 80%; left: 70%; animation-delay: 0.5s;"></div>
+        <div class="sparkle" style="top: 40%; left: 90%; animation-delay: 1s;"></div>
+    </div>
+
+    <div class="card">
+        <div class="atom">
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="electron"></div>
+            <div class="core"></div>
+        </div>
+
+        <h1>
+            Little Lab
+            <span>Stories</span>
+        </h1>
+
+        <div class="badge-container">
+            <div class="badge">COMING SOON</div>
+        </div>
+
+        <div class="flask">
+            <div class="flask-neck"></div>
+            <div class="flask-body">
+                <div class="liquid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        if (window.matchMedia("(min-width: 768px)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                const card = document.querySelector('.card');
+                const x = (window.innerWidth - e.pageX * 2) / 60;
+                const y = (window.innerHeight - e.pageY * 2) / 60;
+                
+                // Card bergerak berlawanan
+                card.style.transform = `skew(-2deg) translate(${x}px, ${y}px)`;
+                
+                // Laser system bergerak sedikit untuk efek kedalaman
+                document.querySelector('.laser-system').style.transform = `translate(${x*0.5}px, ${y*0.5}px)`;
+            });
+        }
+    </script>
+
+</body>
+</html>
