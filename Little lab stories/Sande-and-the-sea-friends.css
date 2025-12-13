@@ -24,7 +24,6 @@
 .u-section-1-1 .u-text-1 {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
   font-size: 3.75rem;
-  text-transform: uppercase;
   font-weight: 700;
   margin: 199px 29px 0;
 }
@@ -68,6 +67,7 @@
     --animation-custom_in-rotate: 0deg;
     --animation-custom_in-scale: 0.3;
     font-size: 3.4375rem;
+    text-transform: none;
     width: 795px;
     margin-left: 0;
     margin-right: 0;

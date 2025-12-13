@@ -26,8 +26,8 @@
 .u-section-1-1 .u-text-1 {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
   font-size: 5.625rem;
-  text-transform: uppercase;
   font-weight: 700;
+  text-transform: none;
   margin: 204px 29px 0;
 }
 
