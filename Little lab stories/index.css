@@ -1165,7 +1165,7 @@
 }
 
 .u-section-8 .u-text-1 {
-  margin: 178px 0 0;
+  margin: 165px 0 0;
 }
 
 .u-section-8 .u-text-2 {
@@ -1259,5 +1259,14 @@
 
   .u-section-8 .u-layout-cell-1 {
     min-height: 551px;
+  }
+
+  .u-section-8 .u-layout-cell-2 {
+    min-height: 436px;
+  }
+
+  .u-section-8 .u-text-1 {
+    width: auto;
+    margin-top: 0;
   }
 }
