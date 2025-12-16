@@ -236,7 +236,12 @@
     margin-bottom: 0;
   }
 
+  .u-section-2 .u-layout-cell-1 {
+    min-height: 148px;
+  }
+
   .u-section-2 .u-text-1 {
+    margin-top: 11px;
     margin-right: 0;
   }
 

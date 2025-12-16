@@ -82,7 +82,6 @@
   .u-section-1 .u-image-1 {
     margin-bottom: -368px;
     min-height: 704px;
-    background-position: 50% 50%, 50% 50%;
   }
 
   .u-section-1 .u-container-layout-1 {
@@ -277,6 +276,7 @@
 } .u-section-3 {
   background-image: , linear-gradient(0deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('images/photo-1594712844133-d4193f13c17e.jpeg');
   background-size: cover, cover;
+  background-position: 50% 50%;
 }
 
 .u-section-3 .u-sheet-1 {
@@ -357,10 +357,6 @@
 }
 
 @media (max-width: 575px) {
-   .u-section-3 {
-    background-position: 50% 50%;
-  }
-
   .u-section-3 .u-sheet-1 {
     min-height: 465px;
   }
