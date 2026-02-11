@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Melampaui Semesta | Spiritual Virtuality</title>
+    <meta name="description" content="E-book Melampaui Semesta: Menjelajahi hubungan mendalam antara spiritualitas dan teknologi Metaverse. Temukan hakikat diri di dunia simulasi.">
+    <meta name="keywords" content="Metaverse, Spiritualitas, Virtual Reality, Cyberpunk, Ebook Teknologi, Rangga Firmansyah, Spiritual Virtuality">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-dark: #050506;
+            --neon-purple: #bc13fe;
+            --neon-pink: #ff00cc;
+            --laser-color: #00f2ff;
+            --text-main: #e0e0e0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Laser Animation Effect */
+        .laser-line {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100vh;
+            background: linear-gradient(to bottom, transparent, var(--laser-color), transparent);
+            box-shadow: 0 0 15px var(--laser-color);
+            z-index: -1;
+            opacity: 0.3;
+            animation: laserMove 4s infinite linear;
+        }
+
+        @keyframes laserMove {
+            0% { transform: translateX(-50vw); }
+            100% { transform: translateX(50vw); }
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle at center, #1a0033 0%, #050506 100%);
+            border-bottom: 2px solid var(--neon-purple);
+            position: relative;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--neon-pink);
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .glitch-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 3px 3px var(--neon-purple), -3px -3px var(--neon-pink);
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px var(--neon-purple));
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 10%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon-pink);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border-left: 10px solid var(--neon-purple);
+            padding-left: 20px;
+        }
+
+        .content-box {
+            background: rgba(20, 0, 40, 0.6);
+            border: 1px solid var(--neon-purple);
+            padding: 40px;
+            border-radius: 5px;
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .content-box::before {
+            content: 'DATA_STREAM';
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            font-size: 0.7rem;
+            color: var(--laser-color);
+        }
+
+        /* List Styling */
+        .feature-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            border-bottom: 1px solid var(--neon-purple);
+            padding: 15px;
+            background: rgba(188, 19, 254, 0.05);
+            transition: 0.3s;
+        }
+
+        .feature-item:hover {
+            border-color: var(--laser-color);
+            transform: scale(1.02);
+        }
+
+        /* CTA Button */
+        .cta-btn {
+            display: inline-block;
+            background: var(--neon-pink);
+            color: white;
+            padding: 20px 50px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 40px;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+            transition: 0.3s;
+            box-shadow: 0 0 20px var(--neon-pink);
+        }
+
+        .cta-btn:hover {
+            background: var(--neon-purple);
+            box-shadow: 0 0 30px var(--neon-purple);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .glitch-title { font-size: 2.5rem; }
+            section { padding: 60px 5%; }
+        }
+
+        .book-img {
+            width: 100%;
+            height: auto;
+            border: 2px solid var(--neon-purple);
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="laser-line"></div>
+
+    <header>
+        <h1 class="glitch-title"><br>MELAMPAUI SEMESTA</h1>
+        <p style="font-size: 1.2rem; letter-spacing: 3px; color: var(--laser-color);">SPIRITUAL VIRTUALITY IN METAVERSE</p>
+        
+        <img src="https://rl2g4uynaq24243da25pfbvoqbgfc2dueo4d2mzovzdty7qrtkxa.arweave.net/ivRuUw0ENc1zYwa68oaugExRaHQjuD0zLq5HPH4Rmq4" alt="Cover Buku Melampaui Semesta" class="hero-img">
+        
+        <a href="#buy" class="cta-btn">AKSES SEKARANG</a>
+    </header>
+
+    <section id="summary">
+        <h2>E-BOOK PENELITIAN</h2>
+        <div class="content-box">
+            <p style="font-size: 1.3rem; line-height: 1.8;">
+                Apakah realitas hanyalah deretan kode? <strong>Melampaui Semesta</strong> adalah panduan esensial bagi Anda yang ingin memahami bagaimana teknologi <span style="color:var(--neon-pink)">Metaverse</span> dan <span style="color:var(--neon-pink)">Virtual Reality</span> bersinggungan dengan pencarian makna hidup. Buku ini mengupas tuntas sejarah virtualitas hingga cara mencapai kedamaian spiritual di tengah hiruk pikuk dunia digital.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Modul Isi Buku</h2>
+        <img src="https://ggyyz3pj7rttrb6rryi5srjcy7j52owdz3qqrsmpmuefcpb7jkba.arweave.net/MbGM7en8ZziH0Y4R2UUix9PdOsPO4QjJj2UIUTw_SoI" alt="Visual Metaverse" class="book-img">
+        
+        <div class="feature-list">
+            <div class="feature-item">
+                <h3 style="color: var(--laser-color);">Mencari Makna di Simulasi</h3>
+                <p>Eksplorasi hasrat hakiki manusia dalam mencari kebenaran di balik wilayah simbolis teknologi.</p>
+            </div>
+            <div class="feature-item">
+                <h3 style="color: var(--laser-color);">Sejarah Spiritual Virtuality</h3>
+                <p>Jalur tak terduga yang menghubungkan sejarah spiritualitas dunia nyata dengan evolusi dunia maya.</p>
+            </div>
+            <div class="feature-item">
+                <h3 style="color: var(--laser-color);">Kesehatan Virtual (Wellness)</h3>
+                <p>Praktik meditasi, yoga, dan terapi kesehatan mental yang dilakukan dalam lingkungan virtual.</p>
+            </div>
+            <div class="feature-item">
+                <h3 style="color: var(--laser-color);">Komunitas Virtual Sangha</h3>
+                <p>Bagaimana membangun koneksi spiritual dan sosial yang bermakna di dalam Metaverse.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="trigger" style="text-align: center;">
+        <div class="content-box" style="border: 2px dashed var(--neon-pink);">
+            <h2 style="border: none; text-align: center; color: white;">MENGAPA HARUS SEKARANG?</h2>
+            <p>Dunia berubah. Sebagai individu yang adaptif terhadap teknologi, memahami sisi psikologis dan spiritual dari Metaverse adalah <span class="highlight-text" style="color: var(--laser-color);">Competitive Advantage</span> Anda. Jangan hanya menjadi pengguna, jadilah pribadi yang tercerahkan di era digital.</p>
+        </div>
+    </section>
+
+    <section id="buy" style="text-align: center; background: linear-gradient(to top, #1a0033, transparent);">
+        <h2 style="border: none;">DOWNLOAD PROTOKOL</h2>
+        <p>Miliki E-book karya <strong>Rangga Firmansyah</strong> sekarang juga.</p>
+        
+        <div style="margin-top: 30px;">
+            <img src="https://j7isyqftyc3shjoapk5jjrnznvltqlczhytvqs2nbteen4dgq6za.arweave.net/T9EsQLPAtyOlwHq6lMW5bVc4LFk-J1hLTQzIRvBmh7I" alt="Mockup Ebook" style="max-width: 250px; filter: drop-shadow(0 0 20px var(--neon-pink));">
+        </div>
+
+        <a href="https://lynk.id/captvq/qnx49xzodyrw/checkout" class="cta-btn" style="font-size: 1.5rem;">BELI SEKARANG - RP 25.000</a>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: var(--laser-color);">*File dikirim instan via Email (PDF/HTML</p>
+    </section>
+
+    <footer style="text-align: center; padding: 50px; color: #444; border-top: 1px solid #222;">
+        <p>&copy; 2026 Melampaui Semesta | Designed by Capt-Howdy</p>
+    </footer>
+
+</body>
+</html>
