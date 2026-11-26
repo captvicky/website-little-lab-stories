@@ -1,51 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
-        <loc>littlelabstorires.com/Home.html</loc>
+        <loc>https://www.littlelabstories.com/Home.html</loc>
         <lastmod>2026-05-16T14:05:00+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/index.html</loc>
-        <lastmod>2026-05-16T14:05:00+07:00</lastmod>
+        <loc>https://www.littlelabstories.com/index.html</loc>
+        <lastmod>2026-11-26T23:59:00+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/kunang-kunang-emas.html</loc>
+        <loc>https://www.littlelabstories.com/language-classes.html</loc>
+        <lastmod>2026-11-26T23:59:00+07:00</lastmod>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.littlelabstories.com/language-classes.html"/>
+        <xhtml:link rel="alternate" hreflang="id" href="https://www.littlelabstories.com/language-classes-id.html"/>
+        <xhtml:link rel="alternate" hreflang="ru" href="https://www.littlelabstories.com/language-classes-ru.html"/>
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://www.littlelabstories.com/language-classes.html"/>
+    </url>
+    <url>
+        <loc>https://www.littlelabstories.com/language-classes-id.html</loc>
+        <lastmod>2026-11-26T23:59:00+07:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.littlelabstories.com/language-classes-ru.html</loc>
+        <lastmod>2026-11-26T23:59:00+07:00</lastmod>
+    </url>
+    <url>
+        <loc>https://www.littlelabstories.com/kunang-kunang-emas.html</loc>
         <lastmod>2025-12-16T14:18:57+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/lily-and-wishker.html</loc>
+        <loc>https://www.littlelabstories.com/lily-and-wishker.html</loc>
         <lastmod>2025-12-16T14:18:37+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/Sande-and-the-sea-friends.html</loc>
+        <loc>https://www.littlelabstories.com/Sande-and-the-sea-friends.html</loc>
         <lastmod>2025-12-20T15:13:22+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/donate.html</loc>
+        <loc>https://www.littlelabstories.com/donate.html</loc>
         <lastmod>2025-12-20T15:12:31+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/story-telling.html</loc>
+        <loc>https://www.littlelabstories.com/story-telling.html</loc>
         <lastmod>2025-12-30T11:58:07+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/everyday-indonesia.html</loc>
+        <loc>https://www.littlelabstories.com/everyday-indonesia.html</loc>
         <lastmod>2026-02-09T08:52:07+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/The-Art-of-Emotional-Flowlines.html</loc>
+        <loc>https://www.littlelabstories.com/The-Art-of-Emotional-Flowlines.html</loc>
         <lastmod>2026-05-14T13:17:58+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/blog/your-essential-guide-to-everyday-indonesian-for-an-unforgettable-bali-trip.html</loc>
+        <loc>https://www.littlelabstories.com/blog/your-essential-guide-to-everyday-indonesian-for-an-unforgettable-bali-trip.html</loc>
         <lastmod>2026-02-09T09:04:36+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/blog/говорите-как-местный-путеводитель-по-индонезийскому-сленгу-и-культуре-бали-для-русских-путешественников.html</loc>
+        <loc>https://www.littlelabstories.com/blog/%D0%B3%D0%BE%D0%B2%D0%BE%D1%80%D0%B8%D1%82%D0%B5-%D0%BA%D0%B0%D0%BA-%D0%BC%D0%B5%D1%81%D1%82%D0%BD%D1%8B%D0%B9-%D0%BF%D1%83%D1%82%D0%B5%D0%B2%D0%BE%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C-%D0%BF%D0%BE-%D0%B8%D0%BD%D0%B4%D0%BE%D0%BD%D0%B5%D0%B7%D0%B8%D0%B9%D1%81%D0%BA%D0%BE%D0%BC%D1%83-%D1%81%D0%BB%D0%B5%D0%BD%D0%B3%D1%83-%D0%B8-%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B5-%D0%B1%D0%B0%D0%BB%D0%B8-%D0%B4%D0%BB%D1%8F-%D1%80%D1%83%D1%81%D1%81%D0%BA%D0%B8%D1%85-%D0%BF%D1%83%D1%82%D0%B5%D1%88%D0%B5%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2.html</loc>
         <lastmod>2026-02-09T08:59:35+07:00</lastmod>
     </url>
     <url>
-        <loc>littlelabstorires.com/blog/blog.html</loc>
+        <loc>https://www.littlelabstories.com/blog/blog.html</loc>
         <lastmod>2026-05-16T14:05:06+07:00</lastmod>
     </url>
 </urlset>
